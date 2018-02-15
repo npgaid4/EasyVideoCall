@@ -3,22 +3,20 @@ REM 結合バッチファイル：div2.exe により生成
 
 ECHO 分割されたファイルを復元します
 
-IF NOT EXIST "cmder.001"  GOTO ERR1
-IF NOT EXIST "cmder.002"  GOTO ERR1
-IF NOT EXIST "cmder.003"  GOTO ERR1
-IF     EXIST "cmder.7z"  GOTO ERR2
+IF NOT EXIST "GIT-21~1.001"  GOTO ERR1
+IF NOT EXIST "GIT-21~1.002"  GOTO ERR1
+IF     EXIST "Git-2.16.1.4-32-bit.exe"  GOTO ERR2
 
-COPY "cmder.001" "cmder.7z"
+COPY "GIT-21~1.001" "GIT-21~1.EXE"
 IF ERRORLEVEL 1 GOTO ERR3
-COPY /B "cmder.7z"+"cmder.002"+"cmder.003"
+COPY /B "GIT-21~1.EXE"+"GIT-21~1.002"
 IF ERRORLEVEL 1 GOTO ERR3
 
-DEL "cmder.001"
-DEL "cmder.002"
-DEL "cmder.003"
+DEL "GIT-21~1.001"
+DEL "GIT-21~1.002"
 
 
-REN "cmder.7z" "cmder.7z"
+REN "GIT-21~1.EXE" "Git-2.16.1.4-32-bit.exe"
 
 ECHO このバッチファイルも消してください
 GOTO END
